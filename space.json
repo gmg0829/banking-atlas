@@ -1,0 +1,8 @@
+{
+  "entry": "client/dist/index.html",
+  "managedCronJobs": [],
+  "name": "银行系统",
+  "platformVersion": 28,
+  "runtime": "typescript",
+  "slug": "yin-xing-xi-tong"
+}

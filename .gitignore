@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-cvm/
+app.db
+app.db-shm
+app.db-wal
+.bun-cache/
+.space-build/
+.space-build-cvm/
+.harness/
+audits/
+*.tsbuildinfo
+icon.webp

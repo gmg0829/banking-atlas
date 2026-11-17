@@ -1,0 +1,90 @@
+/* Web-font slot: uncomment the line below and put your font there. A web-font
+   @import must come before the Tailwind import — an @import placed after any
+   other rule is a build error, and it is reported against a line number in the
+   expanded Tailwind output, far past the end of this file, so the message
+   cannot point you at the mistake. */
+/* @import url('https://fonts.googleapis.com/css2?family=Your+Font:wght@400..700&display=swap'); */
+@import "tailwindcss";
+@import "tailwindcss-safe-area";
+
+@theme {
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 18px;
+  --text-lg--line-height: 28px;
+  --text-xl: 20px;
+  --text-xl--line-height: 28px;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 32px;
+  --text-3xl: 30px;
+  --text-3xl--line-height: 36px;
+  --text-4xl: 36px;
+  --text-4xl--line-height: 40px;
+  --text-5xl: 48px;
+  --text-5xl--line-height: 52px;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #f7f5f0;
+  --surface: #fffdf8;
+  --surface-alt: #efe9dc;
+  --text: #1d2a3a;
+  --dim: #5c6a7a;
+  --border: #ddd5c2;
+  --accent: #b3372c;
+  --accent-ink: #ffffff;
+  --brass: #a07d2c;
+  --navy: #16283f;
+  --radius: 10px;
+  --space-surface: var(--surface);
+  --space-surface-alt: var(--surface-alt);
+  --space-muted: var(--dim);
+  --space-border: var(--border);
+  --space-accent: var(--accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #10151d;
+    --surface: #182130;
+    --surface-alt: #1f2a3d;
+    --text: #ece7db;
+    --dim: #9aa7b8;
+    --border: #31405a;
+    --accent: #e0655a;
+    --accent-ink: #ffffff;
+    --brass: #c9a24d;
+    --navy: #0c1420;
+  }
+}
+
+.font-display {
+  font-family: "Songti SC", "Noto Serif SC", "STSong", Georgia, serif;
+}
+
+/* 业务全链路：当前处理节点的呼吸光晕，让「光点停在哪一步」一眼可见。 */
+@keyframes journey-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); }
+  50% { box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent) 0%, transparent); }
+}
+.journey-node-active {
+  animation: journey-pulse 1.6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-node-active {
+    animation: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+}
+
+/* Phone tap targets: at least 32px tall. */
+@layer base {
+  button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) {
+    min-height: 2rem;
+  }
+}
